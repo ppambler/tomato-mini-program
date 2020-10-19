@@ -1,6 +1,18 @@
 <!--pages/home/home.wxml-->
 <view class="home-container">
-
+  <scroll-view class="todoList" scroll-y="true">
+    <view class="item" wx:for="{{todoLists}}" wx:key="item.id">
+      <view class="select">
+        
+      </view>
+      <view class="text">
+        {{item.text}}
+      </view>
+        
+        
+    </view>
+  </scroll-view>
+    
   <t-button type="gradient" class="createButton" bindtap="handler" size="small">创建任务</t-button>
   <view class="tomato-wrapper">
     <view class="tomato">
