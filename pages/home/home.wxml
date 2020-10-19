@@ -2,7 +2,7 @@
 <view class="home-container">
   <scroll-view class="todoList" scroll-y="true">
     <view class="item" wx:for="{{todoLists}}" wx:key="item.id">
-      <view class="select">
+      <view class="select {{item.selected && 'active'}}">
         
       </view>
       <view class="text">
