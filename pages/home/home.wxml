@@ -19,4 +19,5 @@
       <t-clock>点击开始闹钟</t-clock>
     </view>
   </view>
+  <t-confirm placeholder="我完成了什么" bindconfirm="confirm" bindcancel="cancel" visible="{{visible}}"></t-confirm>
 </view>
