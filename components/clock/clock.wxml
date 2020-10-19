@@ -1,0 +1,6 @@
+<view class="clock" hover-class="active">
+  <text>
+    <slot></slot>
+  </text>
+  <image src="/assets/icons/tomato.png" />
+</view>
