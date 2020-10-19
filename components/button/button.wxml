@@ -1,0 +1,4 @@
+<!--components/button.wxml-->
+<button class="tomato-button {{ type === 'default' ? 'default':'gradient'}} {{size === 'small' && 'small'}}">
+  <slot></slot>
+</button>

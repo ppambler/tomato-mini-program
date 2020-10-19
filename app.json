@@ -1,13 +1,33 @@
 {
   "pages":[
+    "pages/home/home",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "番茄闹钟",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#F6705A",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "专注",
+        "iconPath": "/assets/icons/home.png",
+        "selectedIconPath": "/assets/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "专注",
+        "iconPath": "/assets/icons/total.png",
+        "selectedIconPath": "/assets/icons/total-active.png"
+      }]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

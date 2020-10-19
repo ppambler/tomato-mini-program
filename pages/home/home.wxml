@@ -1,0 +1,4 @@
+<!--pages/home/home.wxml-->
+<text>pages/home/home.wxml</text>
+<t-button>创建一个任务</t-button>
+<t-button type="gradient" size="small">创建一个任务</t-button>
