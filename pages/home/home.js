@@ -1,3 +1,6 @@
+import createId from "../../utils/createId.js";
+import { formatTime } from "../../utils/util.js";
+
 Page({
   /**
    * 页面的初始数据
@@ -12,12 +15,14 @@ Page({
     console.log(content);
     if (content) {
       let todo = {
-        id: this.data.todoLists.length + 1,
+        id: createId(),
+        createdAt: formatTime(new Date()),
         text: content,
         finished: false,
       };
       // this.data.todoLists = todo.concat(this.data.todoLists)
       this.data.todoLists.push(todo);
+      console.log(this.data.todoLists);
       this.setData({ todoLists: this.data.todoLists });
     }
     this.hideConfirm();
@@ -37,8 +42,11 @@ Page({
   destroyTodo(e) {
     console.log(e);
     let index = e.currentTarget.dataset.index;
-    this.data.todoLists[index].finished = true;
+    let selectedItem = this.data.todoLists.filter(
+      (item) => item.id === index
+    )[0];
+    selectedItem.finished = true;
     this.setData({ todoLists: this.data.todoLists });
-    this.setData({ current: index - 1 });
+    // this.setData({ current: index - 1 });
   },
 });

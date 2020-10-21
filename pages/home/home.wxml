@@ -1,7 +1,7 @@
 <!--pages/home/home.wxml-->
 <view class="home-container">
   <scroll-view class="todoList" scroll-y="true">
-    <view class="item animate__animated {{item.id === current ? 'animate__fadeOut' : ''}}" bindtap="destroyTodo" wx:for="{{todoLists}}" wx:for-index="index" wx:key="id" data-index="{{index}}">
+    <view class="item animate__animated {{item.id === current ? 'animate__fadeOut' : ''}}" bindtap="destroyTodo" wx:for="{{todoLists}}" wx:for-index="index" wx:key="id" data-index="{{item.id}}">
       <view class="select {{item.finished && 'active'}}">
         
       </view>
