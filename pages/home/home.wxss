@@ -1,11 +1,16 @@
+@import  '/assets/style/animate.min.wxss';
 .home-container {
   height: 100vh;
   background: #F6F6F6;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: relative;
 }
 
+.home-bottom {
+ height: 50vh;
+}
 .tomato-wrapper {
   flex: 1;
   margin-top: 66rpx;

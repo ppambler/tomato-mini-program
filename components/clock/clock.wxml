@@ -1,5 +1,5 @@
 <view class="clock" hover-class="active">
-  <text>
+  <text style="font-size: {{fontSize + 'rpx'}}">
     <slot></slot>
   </text>
   <image src="/assets/icons/tomato.png" />
