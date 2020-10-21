@@ -12,7 +12,6 @@ Page({
   },
   confirmCreate(e) {
     let content = e.detail;
-    console.log(content);
     if (content) {
       let todo = {
         id: createId(),
@@ -22,31 +21,28 @@ Page({
       };
       // this.data.todoLists = todo.concat(this.data.todoLists)
       this.data.todoLists.push(todo);
-      console.log(this.data.todoLists);
       this.setData({ todoLists: this.data.todoLists });
     }
     this.hideConfirm();
   },
   cancel(e) {
-    console.log(e);
     console.log("取消");
   },
   hideConfirm() {
-    console.log(1);
     this.setData({ visibleConfirm: false });
   },
   showConfirm() {
-    console.log(this.data.visibleConfirm);
     this.setData({ visibleConfirm: 1 });
   },
   destroyTodo(e) {
-    console.log(e);
     let index = e.currentTarget.dataset.index;
     let selectedItem = this.data.todoLists.filter(
       (item) => item.id === index
     )[0];
     selectedItem.finished = true;
-    this.setData({ todoLists: this.data.todoLists });
-    // this.setData({ current: index - 1 });
+    let unSelectItems = this.data.todoLists.filter((item) => item.id !== index);
+    this.setData({ current: selectedItem.id });
+    this.setData({ todoLists: unSelectItems });
+    console.log(this.data.todoLists);
   },
 });
