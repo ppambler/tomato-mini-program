@@ -8,6 +8,7 @@ Page({
   data: {
     todoLists: [],
     visibleConfirm: false,
+    createFlag: false,
     current: 0,
   },
   confirmCreate(e) {
@@ -19,9 +20,11 @@ Page({
         text: content,
         finished: false,
       };
-      // this.data.todoLists = todo.concat(this.data.todoLists)
       this.data.todoLists.push(todo);
+
       this.setData({ todoLists: this.data.todoLists });
+
+      this.setData({ createFlag: true });
     }
     this.hideConfirm();
   },
@@ -41,8 +44,10 @@ Page({
     )[0];
     selectedItem.finished = true;
     let unSelectItems = this.data.todoLists.filter((item) => item.id !== index);
-    this.setData({ current: selectedItem.id });
-    this.setData({ todoLists: unSelectItems });
-    console.log(this.data.todoLists);
+    this.setData({ current: selectedItem.id }, function () {
+      setTimeout(() => {
+        this.setData({ todoLists: unSelectItems });
+      }, 1000);
+    });
   },
 });
