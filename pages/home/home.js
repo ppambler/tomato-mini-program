@@ -38,6 +38,7 @@ Page({
     this.setData({ visibleConfirm: 1 });
   },
   destroyTodo(e) {
+    console.log(e);
     let index = e.currentTarget.dataset.index;
     let selectedItem = this.data.todoLists.filter(
       (item) => item.id === index
@@ -49,5 +50,10 @@ Page({
         this.setData({ todoLists: unSelectItems });
       }, 1000);
     });
+  },
+  watchValue(e) {
+    let text = e.currentTarget.dataset.text;
+    let editItem = this.data.todoLists.filter((item) => item.id === text)[0];
+    editItem.text = e.detail.value;
   },
 });

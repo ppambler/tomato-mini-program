@@ -1,12 +1,12 @@
 <!--pages/home/home.wxml-->
 <view class="home-container">
   <scroll-view class="todoList" scroll-y="true">
-    <view class="item animated {{createFlag ? 'fadeIn' : ''}} {{item.id === current ? 'fadeOut' : ''}}" bindtap="destroyTodo" wx:for="{{todoLists}}" wx:for-index="index" wx:key="id" data-index="{{item.id}}">
-      <view class="select {{item.finished && 'active'}}">
+    <view class="item animated {{createFlag ? 'fadeIn' : ''}} {{item.id === current ? 'fadeOut' : ''}}" wx:for="{{todoLists}}" wx:for-index="index" wx:key="id" >
+      <view class="select {{item.finished && 'active'}}" bindtap="destroyTodo" data-index="{{item.id}}">
         
       </view>
       <view class="text">
-        {{item.text}}
+        <input type="text" data-text="{{item.id}}" value="{{item.text}}" bindinput="watchValue"/>
       </view>
         
         
