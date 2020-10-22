@@ -1,4 +1,5 @@
 import createId from "../../utils/createId.js";
+import { fetchRecords, saveRecords } from "../../utils/todo.js";
 import { formatTime } from "../../utils/util.js";
 
 Page({
@@ -10,6 +11,10 @@ Page({
     visibleConfirm: false,
     createFlag: false,
     current: 0,
+  },
+  onLoad: function (options) {
+    console.log("onLoad监听页面加载", options);
+    this.setData({ todoLists: fetchRecords() });
   },
   confirmCreate(e) {
     let content = e.detail;
@@ -25,6 +30,7 @@ Page({
       this.setData({ todoLists: this.data.todoLists });
 
       this.setData({ createFlag: true });
+      saveRecords(this.data.todoLists);
     }
     this.hideConfirm();
   },
@@ -48,6 +54,7 @@ Page({
     this.setData({ current: selectedItem.id }, function () {
       setTimeout(() => {
         this.setData({ todoLists: unSelectItems });
+        saveRecords(this.data.todoLists);
       }, 1000);
     });
   },
@@ -55,5 +62,6 @@ Page({
     let text = e.currentTarget.dataset.text;
     let editItem = this.data.todoLists.filter((item) => item.id === text)[0];
     editItem.text = e.detail.value;
+    saveRecords(this.data.todoLists);
   },
 });
