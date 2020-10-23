@@ -24,6 +24,7 @@ Page({
         createdAt: formatTime(new Date()),
         text: content,
         finished: false,
+        tomatoTotal: 0,
       };
       this.data.todoLists.push(todo);
 

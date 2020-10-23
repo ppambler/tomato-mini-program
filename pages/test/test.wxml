@@ -1,0 +1,19 @@
+	<block wx:for="{{dataList}}" wx:key="index">
+		<movable-area class="area">
+		    <movable-view class="item"
+		        damping="100" 
+		        direction="horizontal" 
+		        x="{{item.swipeX}}" 
+		        data-index="{{index}}" 
+		        bindchange="swipeChange({{index}})" 
+		        out-of-bounds="true" 
+		        animation="true" 
+		        bindtouchend="swipeEnd({{index}})" 
+		        bindtouchstart="swipeStart({{index}})"
+		    >
+		        <view class="item-left">{{item.name}}</view>
+		        <view class="item-right" catchtap="delete({{index}})">删除</view>
+		    </movable-view>
+		    <view class="line"></view>
+		</movable-area>	
+	</block>

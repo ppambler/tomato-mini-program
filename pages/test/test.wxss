@@ -1,0 +1,38 @@
+.area {
+  width: 750rpx;
+  position: relative;
+  height: 150rpx;
+}
+
+.line {
+  position: absolute;
+  width: 690rpx;
+  height: 1px;
+  background: #ededed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.item {
+  width: 900rpx;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+}
+
+.item-left {
+  width: 750rpx;
+  margin-left: 30rpx;
+}
+
+.item-right {
+  width: 140rpx;
+  height: 150rpx;
+  background: #ED6F20;
+  color: #fff;
+  line-height: 150rpx;
+  text-align: center;
+  border-radius: 0 10rpx 10rpx 0;
+}
